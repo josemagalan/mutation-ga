@@ -715,6 +715,7 @@
     if (state.playing) { el.btnPlay.title = t('pause'); el.btnPlay.setAttribute('aria-label', t('pause')); }
     G.about.renderFooter(el.siteFoot, state.lang);
     $('moodleLink').href = `#page=moodle&lang=${state.lang}`;
+    $('sisterLink').href = G.about.sisterUrl(state.lang);
     if (state.view === 'moodle') {
       document.title = `${G.moodlePage.text[state.lang].title} · ${t('brand')}`;
       G.moodlePage.renderMoodle(el.moodleBody, state.lang);

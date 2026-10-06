@@ -46,6 +46,7 @@
       thanks: 'Agradecemos al programa Claude for Science de Anthropic su apoyo al desarrollo de esta herramienta, que se ha realizado con la ayuda de Claude.',
       foot: 'Acerca de',
       footMoodle: 'Preguntas para Moodle',
+      footSister: 'Herramienta hermana: cruces',
       footLicence: 'Código MIT · Textos CC BY 4.0',
     },
     en: {
@@ -65,6 +66,7 @@
       thanks: 'We thank Anthropic’s Claude for Science programme for supporting the development of this tool, which was built with the help of Claude.',
       foot: 'About',
       footMoodle: 'Moodle questions',
+      footSister: 'Sister tool: crossover',
       footLicence: 'Code MIT · Texts CC BY 4.0',
     },
   };
@@ -132,7 +134,7 @@
       section(T.sisterTitle, (() => {
         const p = node('p', null, `${T.sister} `);
         const s = node('a', null, T.sisterLink);
-        s.href = `${SISTER}#lang=${lang}`;
+        s.href = sisterUrl(lang);
         s.target = '_blank';
         s.rel = 'noopener';
         p.append(s, document.createTextNode('.'));
@@ -143,6 +145,8 @@
       section(T.thanksTitle, node('p', null, T.thanks)),
     );
   }
+
+  function sisterUrl(lang) { return `${SISTER}#lang=${lang}`; }
 
   function renderFooter(container, lang) {
     const T = text[lang] || text.es;
@@ -155,11 +159,13 @@
     gh.href = REPO;
     const moodle = node('a', null, T.footMoodle);
     moodle.href = `#page=moodle&lang=${lang}`;
-    links.append(about, document.createTextNode(' · '), moodle, document.createTextNode(' · '), gh, document.createTextNode(` · ${T.footLicence}`));
+    const sister = node('a', null, T.footSister);
+    sister.href = sisterUrl(lang);
+    links.append(about, document.createTextNode(' · '), moodle, document.createTextNode(' · '), sister, document.createTextNode(' · '), gh, document.createTextNode(` · ${T.footLicence}`));
     info.append(links);
     container.replaceChildren(logoRow('site-foot-logos'), info);
   }
 
-  const api = { renderAbout, renderFooter, authors, affiliations, text };
+  const api = { renderAbout, renderFooter, sisterUrl, authors, affiliations, text };
   (root.GAX = root.GAX || {}).about = api;
 })(typeof self !== 'undefined' ? self : this);

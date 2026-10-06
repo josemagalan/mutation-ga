@@ -906,6 +906,9 @@ a.btn { display: inline-flex; align-items: center; justify-content: center; text
 .home-extra { margin: 22px 0 0; text-align: center; font-size: 0.95rem; }
 .home-extra a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); }
 .home-extra a:hover { color: var(--ink); border-color: var(--muted); }
+.home-extra.home-sister { margin-top: 26px; }
+.home-extra.home-sister + .home-extra { margin-top: 10px; }
+.home-extra.home-sister a { color: var(--p1-text); border-bottom-color: currentColor; }
 .moodle { max-width: 900px; }
 .moodle h2 { font-size: 1.1rem; margin: 22px 0 8px; }
 .mq-group { border: 1px solid var(--line); border-radius: 10px; margin: 0 0 12px; padding: 10px 14px 12px; min-width: 0; }

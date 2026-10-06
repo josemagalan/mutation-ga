@@ -5,6 +5,7 @@
   'use strict';
 
   const REPO = 'https://github.com/josemagalan/mutation-ga';
+  const SISTER = 'https://josemagalan.github.io/crossover-ga/';
 
   const authors = [
     { name: 'José Manuel Galán', aff: [1] },
@@ -30,11 +31,14 @@
   const text = {
     es: {
       title: 'Acerca de esta herramienta',
-      lead: 'Herramienta docente interactiva para ver paso a paso los operadores de mutación de los algoritmos genéticos, clasificados por el tipo de representación (binaria, entera, real y permutacional), con su explicación, pseudocódigo, código descargable y referencias. Es la herramienta hermana de «Cruces en algoritmos genéticos».',
+      lead: 'Herramienta docente interactiva para ver paso a paso los operadores de mutación de los algoritmos genéticos, clasificados por el tipo de representación (binaria, entera, real y permutacional), con su explicación, pseudocódigo, código descargable y referencias. ',
       authorsTitle: 'Autores',
       group: 'Todos los autores forman parte del grupo de investigación Los Goonies (Group of Organization and Industrial Engineering and Simulation).',
       citeTitle: 'Cómo citar',
       cite: 'Estamos preparando un artículo sobre esta herramienta para el Congreso de Ingeniería de Organización. Mientras tanto, si quieres citarla, ponte en contacto con los autores.',
+      sisterTitle: 'Herramienta hermana',
+      sister: 'Esta herramienta acompaña a «Cruces en algoritmos genéticos», de los mismos autores, que muestra con el mismo enfoque los operadores de cruce de cada representación.',
+      sisterLink: 'Abrir «Cruces en algoritmos genéticos»',
       codeTitle: 'Código y licencias',
       code: 'El código fuente está en GitHub. El código, incluidas las implementaciones en Python y JavaScript que se descargan desde la herramienta, se publica con licencia MIT; los textos docentes (explicaciones, narración de los pasos y pseudocódigo), con licencia CC BY 4.0. D3.js tiene licencia ISC.',
       repo: 'Repositorio en GitHub',
@@ -46,11 +50,14 @@
     },
     en: {
       title: 'About this tool',
-      lead: 'Interactive teaching tool to follow, step by step, the mutation operators of genetic algorithms, grouped by representation type (binary, integer, real-valued and permutation), with explanations, pseudocode, downloadable code and references. It is the sister tool of “Crossover in genetic algorithms”.',
+      lead: 'Interactive teaching tool to follow, step by step, the mutation operators of genetic algorithms, grouped by representation type (binary, integer, real-valued and permutation), with explanations, pseudocode, downloadable code and references. ',
       authorsTitle: 'Authors',
       group: 'All authors are members of the Los Goonies research group (Group of Organization and Industrial Engineering and Simulation).',
       citeTitle: 'How to cite',
       cite: 'We are preparing a paper on this tool for the Congreso de Ingeniería de Organización (Spanish conference on industrial management and engineering). In the meantime, if you would like to cite it, please contact the authors.',
+      sisterTitle: 'Sister tool',
+      sister: 'This tool accompanies “Crossover in genetic algorithms”, by the same authors, which shows the crossover operators for each representation with the same approach.',
+      sisterLink: 'Open “Crossover in genetic algorithms”',
       codeTitle: 'Code and licences',
       code: 'The source code is on GitHub. The code, including the Python and JavaScript implementations downloadable from the tool, is released under the MIT licence; the teaching texts (explanations, step narration and pseudocode), under CC BY 4.0. D3.js is ISC-licensed.',
       repo: 'GitHub repository',
@@ -122,6 +129,15 @@
       node('p', 'lead', T.lead),
       section(T.authorsTitle, authorLine(true), affs, node('p', null, T.group)),
       logoRow('about-logos'),
+      section(T.sisterTitle, (() => {
+        const p = node('p', null, `${T.sister} `);
+        const s = node('a', null, T.sisterLink);
+        s.href = `${SISTER}#lang=${lang}`;
+        s.target = '_blank';
+        s.rel = 'noopener';
+        p.append(s, document.createTextNode('.'));
+        return p;
+      })()),
       section(T.citeTitle, node('p', null, T.cite)),
       section(T.codeTitle, codeP),
       section(T.thanksTitle, node('p', null, T.thanks)),

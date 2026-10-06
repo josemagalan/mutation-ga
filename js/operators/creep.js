@@ -88,14 +88,15 @@
     legend: ['copy', 'mutated', 'drawHit'],
     params: [
       { id: 'pm', type: 'float', min: 0.01, max: 0.5, step: 0.01, default: 0.3 },
-      { id: 'step', type: 'int', min: 1, max: 3, step: 1, default: 1 },
+      // «smax» y no «step»: en la URL, step= es el paso de la animación
+      { id: 'smax', type: 'int', min: 1, max: 3, step: 1, default: 1 },
     ],
     variants: ['clamp', 'wrap'],
     defaultVariant: 'clamp',
     random: true,
     run: (parent, marks, opts) => {
       const p = (opts && opts.params) || {};
-      return creep(parent, typeof p.pm === 'number' ? p.pm : 0.3, typeof p.step === 'number' ? p.step : 1,
+      return creep(parent, typeof p.pm === 'number' ? p.pm : 0.3, typeof p.smax === 'number' ? p.smax : 1,
         { variant: opts && opts.variant, seed: opts && opts.seed, draws: opts && opts.draws });
     },
   };

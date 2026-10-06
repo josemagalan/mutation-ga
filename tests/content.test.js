@@ -39,9 +39,9 @@ const CALLS = {
     py: 'f(c["parent"], c["params"]["pm"], 0, 9, Fixed(c["draws"]))',
   },
   creep: {
-    params: (t) => ({ pm: [0.1, 0.3, 0.6][t % 3], step: 1 + (t % 3) }),
-    js: 'f(c.parent, c.params.pm, c.params.step, 0, 9, fixed(c.draws), c.v)',
-    py: 'f(c["parent"], c["params"]["pm"], c["params"]["step"], 0, 9, Fixed(c["draws"]), c["v"])',
+    params: (t) => ({ pm: [0.1, 0.3, 0.6][t % 3], smax: 1 + (t % 3) }),
+    js: 'f(c.parent, c.params.pm, c.params.smax, 0, 9, fixed(c.draws), c.v)',
+    py: 'f(c["parent"], c["params"]["pm"], c["params"]["smax"], 0, 9, Fixed(c["draws"]), c["v"])',
   },
   'uniform-real': {
     params: (t) => ({ pm: [0.1, 0.3, 0.6][t % 3] }),

@@ -137,7 +137,9 @@
     about.href = `#page=about&lang=${lang}`;
     const gh = node('a', null, 'GitHub');
     gh.href = REPO;
-    links.append(about, document.createTextNode(' · '), gh, document.createTextNode(` · ${T.footLicence}`));
+    const moodle = node('a', null, T.footMoodle);
+    moodle.href = `#page=moodle&lang=${lang}`;
+    links.append(about, document.createTextNode(' · '), moodle, document.createTextNode(' · '), gh, document.createTextNode(` · ${T.footLicence}`));
     info.append(links);
     container.replaceChildren(logoRow('site-foot-logos'), info);
   }

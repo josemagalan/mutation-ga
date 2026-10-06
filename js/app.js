@@ -9,6 +9,7 @@
  *      #cmp=binary&lang=es&from=bit-flip&avg=…&v=…&r=…&<parámetros de from>&p=…&c=…&s=…
  *                                          → comparar los operadores de una representación
  *      #page=about&lang=es               → acerca de
+ *      #page=moodle&lang=es              → bancos de preguntas para Moodle
  */
 (function () {
   'use strict';
@@ -38,6 +39,7 @@
     practiceGivens: $('practiceGivens'), practiceForm: $('practiceForm'), prM: $('prM'),
     practiceErr: $('practiceErr'), practiceResult: $('practiceResult'), btnPracticeExit: $('btnPracticeExit'),
     aboutView: $('aboutView'), aboutBody: $('aboutBody'), siteFoot: $('siteFoot'),
+    moodleView: $('moodleView'), moodleBody: $('moodleBody'),
   };
 
   const state = {
@@ -386,7 +388,7 @@
     value: (m, v) => cmpValue(m, v),
   });
 
-  const PARAM_SYMBOL = { pm: 'pm', step: 's', g: 't/T', b: 'b', sigma: 'σ', eta: 'η' };
+  const PARAM_SYMBOL = { pm: 'pm', smax: 's', g: 't/T', b: 'b', sigma: 'σ', eta: 'η' };
 
   // Enlace a la página de un operador con el padre actual y los ajustes dados.
   function opHref(id, o) {
@@ -712,6 +714,11 @@
     el.err.textContent = state.errKey ? t(state.errKey) : '';
     if (state.playing) { el.btnPlay.title = t('pause'); el.btnPlay.setAttribute('aria-label', t('pause')); }
     G.about.renderFooter(el.siteFoot, state.lang);
+    $('moodleLink').href = `#page=moodle&lang=${state.lang}`;
+    if (state.view === 'moodle') {
+      document.title = `${G.moodlePage.text[state.lang].title} · ${t('brand')}`;
+      G.moodlePage.renderMoodle(el.moodleBody, state.lang);
+    }
     if (state.view === 'about') {
       document.title = `${G.about.text[state.lang].title} · ${t('brand')}`;
       G.about.renderAbout(el.aboutBody, state.lang);
@@ -745,6 +752,15 @@
     el.opView.hidden = which !== 'op';
     el.aboutView.hidden = which !== 'about';
     el.cmpView.hidden = which !== 'cmp';
+    el.moodleView.hidden = which !== 'moodle';
+  }
+
+  function showMoodle() {
+    stop();
+    const changed = state.view !== 'moodle';
+    state.view = 'moodle';
+    showOnly('moodle');
+    if (changed) window.scrollTo(0, 0);
   }
 
   function showHome() {
@@ -815,6 +831,7 @@
     if (id && registry.isReady(id) && G.operators[id] && G.content[id]) showOp(id, q);
     else if (cmp && registry.getRepresentation(cmp) && cmpOps(cmp).length > 1) showCompare(cmp, q);
     else if (q.get('page') === 'about') showAbout();
+    else if (q.get('page') === 'moodle') showMoodle();
     else showHome();
     applyLanguage();
   }
@@ -824,6 +841,7 @@
     const params = { lang: state.lang };
     let paramIds = [];
     if (state.view === 'about') params.page = 'about';
+    if (state.view === 'moodle') params.page = 'moodle';
     if (state.view === 'op') {
       Object.assign(params, {
         op: state.opId,
@@ -972,7 +990,7 @@
   }));
 
   // Enlaces a la pantalla inicial conservando el idioma
-  [$('brandLink'), $('backLink'), $('aboutBack')].forEach((a) => a.addEventListener('click', (e) => {
+  [$('brandLink'), $('backLink'), $('aboutBack'), $('moodleBack')].forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
     location.hash = `lang=${state.lang}`;
   }));

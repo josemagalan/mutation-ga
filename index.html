@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operadores de mutación · Algoritmos genéticos</title>
+  <meta name="description" content="Herramienta docente interactiva: operadores de mutación de los algoritmos genéticos paso a paso (binarios, enteros, reales y de permutación). Interactive teaching tool: genetic algorithm mutation operators step by step.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#" id="brandLink">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-i18n="brand">Mutación en algoritmos genéticos</span>
+      </a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </header>
+
+    <main id="homeView" hidden>
+      <section class="hero">
+        <p class="eyebrow" data-i18n="homeEyebrow">Herramienta docente</p>
+        <h1 data-i18n="homeTitle">Operadores de mutación en algoritmos genéticos</h1>
+        <p class="lead" data-i18n="homeLead"></p>
+      </section>
+      <div id="repGrid" class="rep-grid"></div>
+    </main>
+
+    <main id="opView" hidden>
+      <header class="op-head">
+        <a class="back" href="#" id="backLink"><span aria-hidden="true">←</span> <span data-i18n="allOperators">Todos los operadores</span></a>
+        <p class="eyebrow" id="opEyebrow"></p>
+        <h1 id="opTitle"></h1>
+        <p class="subtitle" id="opSubtitle"></p>
+        <nav class="op-switch" aria-labelledby="opSwitchLabel">
+          <span id="opSwitchLabel" class="op-switch-label" data-i18n="sameRepresentation">Mutaciones de esta representación</span>
+          <div id="opSwitch" class="op-switch-items"></div>
+        </nav>
+      </header>
+
+      <section class="card controls" aria-labelledby="controls-title">
+        <h2 id="controls-title" class="sr-only">Controles</h2>
+        <div class="control-row">
+          <div class="field">
+            <label for="len" data-i18n="length">Longitud</label>
+            <div class="range-wrap">
+              <input type="range" id="len" min="5" max="12" step="1" value="8">
+              <output id="lenOut" for="len">8</output>
+            </div>
+          </div>
+          <div class="field">
+            <label for="seed" data-i18n="seed">Semilla</label>
+            <input type="number" id="seed" min="0" max="999999" step="1" inputmode="numeric">
+          </div>
+          <div class="field" id="variantField" hidden>
+            <label for="variant" data-i18n="variant">Variante</label>
+            <select id="variant"></select>
+          </div>
+          <div id="paramsBox" class="params-box"></div>
+          <div class="buttons">
+            <button type="button" id="btnRandom" class="btn primary" data-i18n="randomParent">Padre aleatorio</button>
+            <button type="button" id="btnMarks" class="btn" hidden>Posición aleatoria</button>
+            <button type="button" id="btnDraw" class="btn" data-i18n="drawAgain" hidden>Sortear de nuevo</button>
+            <button type="button" id="btnPractice" class="btn" data-i18n="practiceMode">Practicar</button>
+            <button type="button" id="btnRoutes" class="btn" data-i18n="showRoutes" hidden>Ver como rutas</button>
+            <a id="btnCompare" class="btn" href="#" data-i18n="compareOperators">Comparar operadores</a>
+          </div>
+        </div>
+        <p id="variantDesc" class="hint variant-desc" hidden></p>
+        <details id="manual">
+          <summary data-i18n="manualParent">Introducir el padre a mano</summary>
+          <form id="manualForm" class="manual-form" novalidate>
+            <p class="hint" id="manualHint"></p>
+            <div class="manual-grid">
+              <label for="inP" data-i18n="parent">Padre</label>
+              <input type="text" id="inP" autocomplete="off" spellcheck="false" placeholder="1 1 0 0 1 0 0 1">
+            </div>
+            <div class="manual-actions">
+              <button type="submit" class="btn primary" data-i18n="apply">Aplicar</button>
+              <p id="err" class="error" role="alert"></p>
+            </div>
+          </form>
+        </details>
+      </section>
+
+      <section class="card stage">
+        <svg id="viz" role="img" aria-labelledby="vizLabel">
+          <title id="vizLabel"></title>
+        </svg>
+        <p class="hint drag-hint" id="dragHint" hidden></p>
+
+        <div class="player" id="playerBox">
+          <div class="player-buttons">
+            <button type="button" class="icon-btn" id="btnReset" data-i18n-title="reset" title="Inicio">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="btnPrev" data-i18n-title="prev" title="Anterior">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14L6 12z"/></svg>
+            </button>
+            <button type="button" class="icon-btn play" id="btnPlay" data-i18n-title="play" title="Reproducir">
+              <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg>
+              <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+            </button>
+            <button type="button" class="icon-btn" id="btnNext" data-i18n-title="next" title="Siguiente">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l11-7z"/></svg>
+            </button>
+          </div>
+          <div class="progress">
+            <span id="stepCounter" class="counter">Paso 1 de 1</span>
+            <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+          </div>
+          <div class="field speed">
+            <label for="speed" data-i18n="speed">Velocidad</label>
+            <input type="range" id="speed" min="0.5" max="2.5" step="0.25" value="1">
+            <output id="speedOut" for="speed">1×</output>
+          </div>
+        </div>
+
+        <div class="narration" id="narrationBox" aria-live="polite">
+          <p id="narration"></p>
+        </div>
+
+        <ul class="legend" id="legend"></ul>
+      </section>
+
+      <section class="card practice" id="practiceCard" hidden aria-labelledby="practice-title">
+        <h2 id="practice-title" class="learn-title" data-i18n="practiceTitle">Practicar: predice el mutante</h2>
+        <p class="hint" id="practiceIntro"></p>
+        <div id="practiceGivens" class="practice-givens" hidden></div>
+        <form id="practiceForm" class="manual-form practice-form" novalidate>
+          <div class="manual-grid">
+            <label for="prM" data-i18n="yourMutant">Tu mutante</label>
+            <input type="text" id="prM" autocomplete="off" spellcheck="false">
+          </div>
+          <div class="manual-actions">
+            <button type="submit" class="btn primary" data-i18n="checkPrediction">Comprobar</button>
+            <button type="button" id="btnPracticeExit" class="btn" data-i18n="seeAnimation" hidden>Ver la animación</button>
+            <p id="practiceErr" class="error" role="alert"></p>
+          </div>
+        </form>
+        <div id="practiceResult" class="practice-result" aria-live="polite"></div>
+      </section>
+
+      <section class="card routes" id="routeCard" hidden aria-labelledby="routes-title">
+        <h2 id="routes-title" class="learn-title" data-i18n="routesTitle">Los cromosomas como rutas</h2>
+        <p class="hint" data-i18n="routesIntro"></p>
+        <div class="route-maps">
+          <figure class="route-map"><svg id="routeMap1" role="img"></svg><figcaption id="routeCap1"></figcaption></figure>
+          <figure class="route-map"><svg id="routeMap2" role="img"></svg><figcaption id="routeCap2"></figcaption></figure>
+        </div>
+        <ul class="legend" id="routeLegend"></ul>
+      </section>
+
+      <section class="card learn" aria-labelledby="learn-title">
+        <h2 id="learn-title" class="learn-title" data-i18n="learnTitle">Para saber más</h2>
+        <div class="tabs" role="tablist" aria-labelledby="learn-title">
+          <button type="button" role="tab" id="tab-explain" aria-controls="panel-explain" aria-selected="true" data-i18n="tabExplain">Explicación</button>
+          <button type="button" role="tab" id="tab-code" aria-controls="panel-code" aria-selected="false" tabindex="-1" data-i18n="tabCode">Pseudocódigo y código</button>
+          <button type="button" role="tab" id="tab-refs" aria-controls="panel-refs" aria-selected="false" tabindex="-1" data-i18n="tabRefs">Referencias</button>
+        </div>
+
+        <div role="tabpanel" id="panel-explain" aria-labelledby="tab-explain" class="panel" tabindex="0">
+          <div id="explainBody" class="prose"></div>
+        </div>
+
+        <div role="tabpanel" id="panel-code" aria-labelledby="tab-code" class="panel" hidden>
+          <div class="code-toolbar">
+            <div class="seg" role="group" data-i18n-aria="codeLang" aria-label="Lenguaje">
+              <button type="button" data-code="pseudo" aria-pressed="true" data-i18n="codePseudo">Pseudocódigo</button>
+              <button type="button" data-code="python" aria-pressed="false">Python</button>
+              <button type="button" data-code="javascript" aria-pressed="false">JavaScript</button>
+            </div>
+            <label id="syncWrap" class="sync">
+              <input type="checkbox" id="syncToggle" checked>
+              <span data-i18n="syncLabel">Resaltar el paso actual</span>
+            </label>
+            <div class="code-actions">
+              <span id="copyStatus" class="copy-status" role="status" aria-live="polite"></span>
+              <button type="button" id="btnCopy" class="btn" data-i18n="copyBtn">Copiar</button>
+              <button type="button" id="btnDownload" class="btn">Descargar</button>
+            </div>
+          </div>
+          <p id="codeHint" class="hint code-hint"></p>
+          <pre id="codeBlock" class="code" tabindex="0"></pre>
+        </div>
+
+        <div role="tabpanel" id="panel-refs" aria-labelledby="tab-refs" class="panel" hidden tabindex="0">
+          <p class="hint" data-i18n="refsIntro">Fuente original del operador, referencias básicas del curso y lecturas recomendadas.</p>
+          <ol id="refList" class="refs"></ol>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <p class="hint" data-i18n="keysHint">← → avanzar/retroceder · Espacio reproducir/pausa</p>
+      </footer>
+    </main>
+
+    <main id="cmpView" hidden>
+      <header class="op-head">
+        <a class="back" href="#" id="cmpBack"><span aria-hidden="true">←</span> <span id="cmpBackText"></span></a>
+        <p class="eyebrow" id="cmpEyebrow"></p>
+        <h1 data-i18n="compareTitle">Comparar operadores</h1>
+        <p class="subtitle" data-i18n="compareLead"></p>
+      </header>
+
+      <section class="card" aria-labelledby="cmp-parents-title">
+        <div class="cmp-section-head">
+          <h2 id="cmp-parents-title" class="learn-title" data-i18n="compareParentTitle">Padre</h2>
+          <div class="buttons">
+            <button type="button" id="cmpRandom" class="btn primary" data-i18n="randomParent">Padre aleatorio</button>
+            <button type="button" id="cmpDraw" class="btn" data-i18n="drawAgain">Sortear de nuevo</button>
+          </div>
+        </div>
+        <div id="cmpParents"></div>
+      </section>
+
+      <section class="card" aria-labelledby="cmp-children-title">
+        <h2 id="cmp-children-title" class="learn-title" data-i18n="compareChildrenTitle">Mutantes de este padre</h2>
+        <p class="hint" data-i18n="compareChildrenNote"></p>
+        <div id="cmpChildren" class="cmp-children"></div>
+        <ul class="legend" id="cmpLegend"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="cmp-table-title">
+        <div class="cmp-section-head">
+          <h2 id="cmp-table-title" class="learn-title" data-i18n="compareTableTitle">Cuánto cambia y qué conserva cada operador</h2>
+          <div class="cmp-mode">
+            <span class="cmp-mode-label" id="cmpAvgLabel" data-i18n="compareAvgLabel">Media con</span>
+            <div class="seg" role="group" aria-labelledby="cmpAvgLabel" id="cmpAvg">
+              <button type="button" data-avg="same" aria-pressed="true" data-i18n="compareAvgSame">este padre</button>
+              <button type="button" data-avg="rand" aria-pressed="false" data-i18n="compareAvgRand">padres al azar</button>
+            </div>
+            <span class="cmp-progress" id="cmpProgress" aria-live="polite"></span>
+          </div>
+        </div>
+        <p class="hint" id="cmpTableNote"></p>
+        <div class="table-scroll"><table id="cmpTable" class="cmp-table"></table></div>
+        <h3 class="cmp-defs-title" data-i18n="compareDefsTitle">Qué mide cada columna</h3>
+        <dl id="cmpDefs" class="cmp-defs"></dl>
+        <p class="hint cmp-refs" id="cmpRefs"></p>
+      </section>
+    </main>
+
+    <main id="aboutView" hidden>
+      <a class="back" href="#" id="aboutBack"><span aria-hidden="true">←</span> <span data-i18n="allOperators">Todos los operadores</span></a>
+      <article class="card about" id="aboutBody"></article>
+    </main>
+
+    <footer class="site-foot" id="siteFoot"></footer>
+  </div>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="js/rng.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/registry.js"></script>
+  <script src="js/operators/mut-utils.js"></script>
+  <script src="js/operators/bin-utils.js"></script>
+  <script src="js/operators/bit-flip.js"></script>
+  <script src="js/operators/one-bit.js"></script>
+  <script src="js/operators/int-utils.js"></script>
+  <script src="js/operators/random-resetting.js"></script>
+  <script src="js/operators/creep.js"></script>
+  <script src="js/operators/real-utils.js"></script>
+  <script src="js/operators/uniform-real.js"></script>
+  <script src="js/operators/non-uniform.js"></script>
+  <script src="js/operators/gaussian.js"></script>
+  <script src="js/operators/polynomial.js"></script>
+  <script src="js/operators/perm-utils.js"></script>
+  <script src="js/operators/reset-perm.js"></script>
+  <script src="js/operators/swap.js"></script>
+  <script src="js/operators/insert.js"></script>
+  <script src="js/operators/inversion.js"></script>
+  <script src="js/operators/scramble.js"></script>
+  <script src="js/viz/chromosome-view.js"></script>
+  <script src="js/cities.js"></script>
+  <script src="js/viz/route-map.js"></script>
+  <script src="js/content/common.js"></script>
+  <script src="js/content/bit-flip.js"></script>
+  <script src="js/content/one-bit.js"></script>
+  <script src="js/content/random-resetting.js"></script>
+  <script src="js/content/creep.js"></script>
+  <script src="js/content/uniform-real.js"></script>
+  <script src="js/content/non-uniform.js"></script>
+  <script src="js/content/gaussian.js"></script>
+  <script src="js/content/polynomial.js"></script>
+  <script src="js/content/reset-perm.js"></script>
+  <script src="js/content/swap.js"></script>
+  <script src="js/content/insert.js"></script>
+  <script src="js/content/inversion.js"></script>
+  <script src="js/content/scramble.js"></script>
+  <script src="js/practice.js"></script>
+  <script src="js/compare.js"></script>
+  <script src="js/compare-view.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/learn.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

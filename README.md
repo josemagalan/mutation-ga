@@ -81,7 +81,7 @@ The tests check every operator (worked examples, thousands of random cases contr
 
 ## How to cite
 
-A paper describing this tool is in preparation. In the meantime, if you would like to cite it, please contact the authors.
+A paper describing this tool is in preparation for the Congreso de Ingeniería de Organización (CIO). In the meantime, if you would like to cite it, please contact the authors.
 
 ## License
 

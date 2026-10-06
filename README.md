@@ -7,6 +7,7 @@
 [![D3.js v7 · no build](https://img.shields.io/badge/D3.js_v7-no_build-f9a03c?logo=d3dotjs&logoColor=white)](https://d3js.org/)
 [![Languages: ES | EN](https://img.shields.io/badge/Languages-ES_%7C_EN-blue.svg)](#features)
 [![Purpose: Teaching tool](https://img.shields.io/badge/Purpose-Teaching_tool-informational.svg)](#pedagogical-purpose)
+[![Sister tool: crossover-ga](https://img.shields.io/badge/Sister_tool-crossover--ga-8a2be2?logo=github)](https://github.com/josemagalan/crossover-ga)
 
 **José Manuel Galán**¹ · **Silvia Díaz-de la Fuente**² · **Virginia Ahedo**¹ · **María Pereda**³ · **José Ignacio Santos**¹
 
@@ -78,6 +79,10 @@ The tests check every operator (worked examples, thousands of random cases contr
 | `js/i18n.js`, `js/rng.js`, `js/cities.js` | Spanish and English texts; seeded random generator; random cities |
 | `img/logos/`, `vendor/` | Institution logos; D3.js v7 |
 | `tests/` | Tests with `node:test` |
+
+## Related tools
+
+- [Crossover in genetic algorithms](https://github.com/josemagalan/crossover-ga) ([live demo](https://josemagalan.github.io/crossover-ga/)): the companion tool on crossover operators by representation, by the same authors and with the same interface, practice mode, comparison screen and Moodle question banks. Used together, the two tools cover the variation operators of a genetic algorithm.
 
 ## How to cite
 

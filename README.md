@@ -8,6 +8,7 @@
 [![Languages: ES | EN](https://img.shields.io/badge/Languages-ES_%7C_EN-blue.svg)](#features)
 [![Purpose: Teaching tool](https://img.shields.io/badge/Purpose-Teaching_tool-informational.svg)](#pedagogical-purpose)
 [![Sister tool: crossover-ga](https://img.shields.io/badge/Sister_tool-crossover--ga-8a2be2?logo=github)](https://github.com/josemagalan/crossover-ga)
+[![Sister tool: selection-ga](https://img.shields.io/badge/Sister_tool-selection--ga-8a2be2?logo=github)](https://github.com/josemagalan/selection-ga)
 
 **José Manuel Galán**¹ · **Silvia Díaz-de la Fuente**² · **Virginia Ahedo**¹ · **María Pereda**³ · **José Ignacio Santos**¹
 
@@ -20,7 +21,7 @@ All authors are members of the Los Goonies research group (Group of Organization
 
 Mutation is how a genetic algorithm randomly changes a small part of a solution to bring new variety into the population, and how it has to be done depends on how each solution is represented: flipping a value makes sense in a bit string, but on a permutation it produces repeated genes, and on real numbers the size of the step matters as much as the step itself. This interactive tool shows, step by step and in Spanish or English, how the classic mutation operators work for binary, integer, real-valued and permutation representations, and lets students practise predicting the mutant and compare how much each operator changes and what it keeps from the parent.
 
-It is the sister tool of [Crossover in genetic algorithms](https://github.com/josemagalan/crossover-ga), with the same approach and features. It runs entirely in the browser, with no build step and no server: open `index.html` or use the [live demo](https://josemagalan.github.io/mutation-ga/).
+It is the sister tool of [Crossover in genetic algorithms](https://github.com/josemagalan/crossover-ga), with the same approach and features, and the series is completed by [Selection in genetic algorithms](https://github.com/josemagalan/selection-ga). It runs entirely in the browser, with no build step and no server: open `index.html` or use the [live demo](https://josemagalan.github.io/mutation-ga/).
 
 ## Implemented operators
 
@@ -83,6 +84,7 @@ The tests check every operator (worked examples, thousands of random cases contr
 ## Related tools
 
 - [Crossover in genetic algorithms](https://github.com/josemagalan/crossover-ga) ([live demo](https://josemagalan.github.io/crossover-ga/)): the companion tool on crossover operators by representation, by the same authors and with the same interface, practice mode, comparison screen and Moodle question banks. Used together, the two tools cover the variation operators of a genetic algorithm.
+- [Selection in genetic algorithms](https://github.com/josemagalan/selection-ga) ([live demo](https://josemagalan.github.io/selection-ga/)): the third tool of the series, on parent selection (roulette wheel, SUS, ranking, tournament, truncation…) and replacement (elitism, steady state, (μ + λ), (μ, λ)), by the same authors and with the same interface. Together, the three tools cover the operators of a genetic algorithm.
 
 ## How to cite
 

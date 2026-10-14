@@ -719,6 +719,8 @@
     $('moodleLink').href = `#page=moodle&lang=${state.lang}`;
     $('sisterLink').href = G.about.sisterUrl(state.lang);
     $('selectionLink').href = G.about.sisterUrl(state.lang, 'selection');
+    $('representationLink').href = G.about.sisterUrl(state.lang, 'representation');
+    $('initializationLink').href = G.about.sisterUrl(state.lang, 'initialization');
     if (state.view === 'moodle') {
       document.title = `${G.moodlePage.text[state.lang].title} · ${t('brand')}`;
       G.moodlePage.renderMoodle(el.moodleBody, state.lang);

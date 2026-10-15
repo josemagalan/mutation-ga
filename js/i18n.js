@@ -7,7 +7,7 @@
 
   const dict = {
     es: {
-      portalHome: 'Herramientas de algoritmos genéticos',
+      portalHome: 'Laboratorio de algoritmos genéticos',
       brand: 'Mutación en algoritmos genéticos',
       homeTitleDoc: 'Operadores de mutación · Algoritmos genéticos',
       opTitleDoc: '{name} · Algoritmos genéticos',
@@ -184,7 +184,7 @@
       routeLegendMissing: 'Ciudad que falta en el mutante (no es una ruta válida)',
     },
     en: {
-      portalHome: 'Genetic algorithm tools',
+      portalHome: 'Genetic Algorithms Lab',
       brand: 'Mutation in genetic algorithms',
       homeTitleDoc: 'Mutation operators · Genetic algorithms',
       opTitleDoc: '{name} · Genetic algorithms',

@@ -159,8 +159,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. En el apartado 3.3.2.1 presenta las mutaciones de las permutaciones y las propiedades que deben cumplir; la mezcla es la que menos respeta la localidad.',
-      en: 'The course’s reference textbook. Section 3.3.2.1 presents permutation mutations and the properties they should meet; scramble is the one that least respects locality.',
+      es: 'Manual de referencia del curso. En el apartado 3.3.2.1 presenta las mutaciones de las permutaciones y las propiedades que deben cumplir; la mezcla es poco local salvo que el tramo sea corto.',
+      en: 'The course’s reference textbook. Section 3.3.2.1 presents permutation mutations and the properties they should meet; scramble is not very local unless the stretch is short.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación de permutaciones en el capítulo 8, dedicado a los algoritmos genéticos.',

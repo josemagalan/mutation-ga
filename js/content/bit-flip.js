@@ -210,8 +210,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Foundational work on genetic algorithms. Presents mutation as a secondary operator that maintains diversity and recovers lost alleles.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. En el apartado 3.3.2.2, dedicado a la reproducción en los algoritmos evolutivos, presenta la mutación antes que el cruce: sus propiedades deseables (ergodicidad, validez y localidad) y los operadores de cada representación, entre ellos la inversión de bits (flip) de la binaria.',
-      en: 'The course’s reference textbook. Section 3.3.2.2, on reproduction in evolutionary algorithms, presents mutation before crossover: its desirable properties (ergodicity, validity and locality) and the operators for each representation, including bit flipping for binary.',
+      es: 'Manual de referencia del curso. En el apartado 3.3.2.1, dedicado a la reproducción en los algoritmos evolutivos, presenta la mutación antes que el cruce: sus propiedades deseables (ergodicidad, validez y localidad) y los operadores de cada representación, entre ellos la inversión de bits (flip) de la binaria.',
+      en: 'The course’s reference textbook. Section 3.3.2.1, on reproduction in evolutionary algorithms, presents mutation before crossover: its desirable properties (ergodicity, validity and locality) and the operators for each representation, including bit flipping for binary.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación junto al cruce en el capítulo 8, dedicado a los algoritmos genéticos.',

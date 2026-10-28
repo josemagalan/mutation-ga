@@ -180,8 +180,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Propose polynomial mutation, together with SBX crossover, for real-coded genetic algorithms applied to engineering design.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.2; en la polinómica, el índice η regula la localidad.',
-      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.2; in polynomial mutation, the index η governs locality.',
+      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.1; en la polinómica, el índice η regula la localidad.',
+      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.1; in polynomial mutation, the index η governs locality.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

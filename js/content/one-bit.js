@@ -134,8 +134,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Relaciona la mutación de los algoritmos evolutivos (apartado 3.3.2.2, propiedad de localidad) con los vecindarios de la búsqueda local: en binario, las soluciones a distancia de Hamming 1, que son exactamente los mutantes posibles de este operador.',
-      en: 'The course’s reference textbook. Relates mutation in evolutionary algorithms (section 3.3.2.2, locality property) to local-search neighbourhoods: in binary, the solutions at Hamming distance 1, which are exactly this operator’s possible mutants.',
+      es: 'Manual de referencia del curso. Relaciona la mutación de los algoritmos evolutivos (apartado 3.3.2.1, propiedad de localidad) con los vecindarios de la búsqueda local: en binario, las soluciones a distancia de Hamming 1, que son exactamente los mutantes posibles de este operador.',
+      en: 'The course’s reference textbook. Relates mutation in evolutionary algorithms (section 3.3.2.1, locality property) to local-search neighbourhoods: in binary, the solutions at Hamming distance 1, which are exactly this operator’s possible mutants.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación en el capítulo 8 (algoritmos genéticos) y los vecindarios en los capítulos de búsqueda local.',

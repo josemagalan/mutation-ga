@@ -145,8 +145,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Proposes for the travelling-salesman problem the move that reverses a stretch of the route, later known as 2-opt: it removes two edges and reconnects the route the other way round.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Presenta la inversión como vecindario de las permutaciones y la relaciona con el 2-opt del viajante (capítulo 2), y la recoge como mutación en el apartado 3.3.2.2, con la propiedad de localidad.',
-      en: 'The course’s reference textbook. Presents inversion as a permutation neighbourhood and relates it to the travelling salesman’s 2-opt (chapter 2), and includes it as a mutation in section 3.3.2.2, with the locality property.',
+      es: 'Manual de referencia del curso. Presenta la inversión como vecindario de las permutaciones y la relaciona con el 2-opt del viajante (capítulo 2), y la recoge como mutación en el apartado 3.3.2.1, con la propiedad de localidad.',
+      en: 'The course’s reference textbook. Presents inversion as a permutation neighbourhood and relates it to the travelling salesman’s 2-opt (chapter 2), and includes it as a mutation in section 3.3.2.1, with the locality property.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación de permutaciones en el capítulo 8, dedicado a los algoritmos genéticos.',
@@ -163,6 +163,10 @@ if (typeof module !== 'undefined' && module.exports) {
     C.ref('holland', {
       es: 'Su operador de inversión, pensado para cadenas binarias, reordena los locus sin cambiar lo que codifica la cadena; es una idea distinta de la mutación por inversión de las permutaciones.',
       en: 'Its inversion operator, designed for binary strings, reorders the loci without changing what the string encodes; it is a different idea from permutation inversion mutation.',
+    }),
+    C.ref('cicirello', {
+      es: 'Revisión de las mutaciones de permutación con el rasgo que conserva cada una. La inversión es buena elección cuando la permutación representa aristas sin sentido, como en el viajante simétrico, pero demasiado disruptiva si tienen sentido: da la vuelta, en promedio, a cerca de un tercio de ellas. Algunas inversiones, como la de toda la ruta, no cambian ninguna arista.',
+      en: 'Review of permutation mutations with the feature each one preserves. Inversion is a good choice when the permutation represents undirected edges, as in the symmetric travelling salesman problem, but too disruptive when edges are directed: on average it reverses about a third of them. Some inversions, such as reversing the whole route, change no edge at all.',
     }),
   ];
 

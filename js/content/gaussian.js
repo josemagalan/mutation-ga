@@ -177,8 +177,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Foundational work on evolution strategies, whose mutation adds normal noise to each variable.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.2 y las estrategias evolutivas, con su mutación gaussiana y la adaptación de σ, en el capítulo 3.',
-      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.2 and evolution strategies, with their Gaussian mutation and the adaptation of σ, in chapter 3.',
+      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.1 y las estrategias evolutivas, con su mutación gaussiana y la adaptación de σ, en el capítulo 3.',
+      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.1 and evolution strategies, with their Gaussian mutation and the adaptation of σ, in chapter 3.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

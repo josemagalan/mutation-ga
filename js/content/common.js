@@ -81,6 +81,16 @@
       url: null,
       core: true,   // referencia básica del curso
     },
+    cicirello: {
+      id: 'cicirello-2023',
+      type: 'inproceedings',
+      authors: 'Cicirello, V. A.',
+      year: '2023',
+      title: 'A survey and analysis of evolutionary operators for permutations',
+      container: 'Proceedings of the 15th International Joint Conference on Computational Intelligence (IJCCI 2023): ECTA',
+      details: { es: '(pp. 288–299). SciTePress', en: '(pp. 288–299). SciTePress' },
+      url: 'https://doi.org/10.5220/0012204900003595',
+    },
   };
 
   Object.assign(refs, {

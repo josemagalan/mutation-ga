@@ -139,8 +139,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Proposes, for task-scheduling problems, order-based mutation, which swaps two randomly chosen genes, and compares it with others.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Presenta el intercambio como vecindario de las permutaciones en las metaheurísticas basadas en una solución (capítulo 2) y como mutación en los algoritmos evolutivos (apartado 3.3.2.2), con las propiedades de validez y localidad.',
-      en: 'The course’s reference textbook. Presents swap as a permutation neighbourhood in single-solution metaheuristics (chapter 2) and as a mutation in evolutionary algorithms (section 3.3.2.2), with the validity and locality properties.',
+      es: 'Manual de referencia del curso. Presenta el intercambio como vecindario de las permutaciones en las metaheurísticas basadas en una solución (capítulo 2) y como mutación en los algoritmos evolutivos (apartado 3.3.2.1), con las propiedades de validez y localidad.',
+      en: 'The course’s reference textbook. Presents swap as a permutation neighbourhood in single-solution metaheuristics (chapter 2) and as a mutation in evolutionary algorithms (section 3.3.2.1), with the validity and locality properties.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación de permutaciones en el capítulo 8, dedicado a los algoritmos genéticos.',
@@ -149,6 +149,10 @@ if (typeof module !== 'undefined' && module.exports) {
     C.ref('eiben', {
       es: 'Manual de computación evolutiva. Su apartado 4.5.1 presenta las cuatro mutaciones clásicas de las permutaciones: intercambio, inserción, mezcla e inversión.',
       en: 'Evolutionary computing textbook. Section 4.5.1 presents the four classic permutation mutations: swap, insert, scramble and inversion.',
+    }),
+    C.ref('cicirello', {
+      es: 'Revisión de las mutaciones de permutación con el rasgo que conserva cada una. Considera el intercambio una buena opción general, porque cambia poco sea cual sea el rasgo que importe: posiciones, aristas o precedencias.',
+      en: 'Review of permutation mutations with the feature each one preserves. Considers swap a good general-purpose choice, because it makes a small change whatever feature matters: positions, edges or precedences.',
     }),
   ];
 

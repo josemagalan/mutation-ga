@@ -216,8 +216,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. La propiedad de localidad (apartado 3.3.2.2) pide que el mutante se parezca al padre; con valores ordenados, los pasos pequeños del deslizamiento la cumplen mejor que el reinicio aleatorio.',
-      en: 'The course’s reference textbook. The locality property (section 3.3.2.2) asks the mutant to resemble its parent; with ordered values, the small steps of creep meet it better than random resetting.',
+      es: 'Manual de referencia del curso. La propiedad de localidad (apartado 3.3.2.1) pide que el mutante se parezca al padre; con valores ordenados, los pasos pequeños del deslizamiento la cumplen mejor que el reinicio aleatorio.',
+      en: 'The course’s reference textbook. The locality property (section 3.3.2.1) asks the mutant to resemble its parent; with ordered values, the small steps of creep meet it better than random resetting.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la representación de las soluciones y su mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

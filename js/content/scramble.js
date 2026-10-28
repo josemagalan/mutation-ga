@@ -9,13 +9,13 @@
   const explanation = {
     es: [
       'La mutación por mezcla (scramble) elige un tramo del cromosoma al azar y reordena sus genes al azar, de modo que todas las ordenaciones del tramo sean igual de probables. Fuera del tramo no cambia nada.',
-      'Es la más disruptiva de las cuatro mutaciones clásicas de las permutaciones: dentro del tramo se pierden a la vez las posiciones, el orden relativo y las adyacencias. Con las propiedades de Talbi (2009), sigue siendo válida y ergódica, pero es poco local salvo que el tramo sea corto. El tamaño del tramo controla, por tanto, cuánto cambia el mutante.',
+      'Dentro del tramo se pierden a la vez las posiciones, el orden relativo y las adyacencias. Con las propiedades de Talbi (2009), sigue siendo válida y ergódica, pero es poco local salvo que el tramo sea corto. El tamaño del tramo controla, por tanto, cuánto cambia el mutante. Cicirello (2023) la considera, en general, demasiado disruptiva, salvo cuando importa qué gen va antes que otro: ese orden solo puede cambiar entre dos genes del tramo, y en promedio cambia la mitad de las veces.',
       'Para que todas las ordenaciones sean igual de probables, la mezcla se hace con el algoritmo de Fisher-Yates: se recorre el tramo de atrás adelante y cada gen se intercambia con uno elegido al azar entre él y los anteriores. Un tramo de m genes admite m! ordenaciones, y una de ellas es la original, así que a veces, sobre todo con tramos cortos, el tramo queda igual.',
       'Coste: un sorteo por gen del tramo, en tiempo O(n) como mucho.',
     ],
     en: [
       'Scramble mutation chooses a stretch of the chromosome at random and randomly reorders its genes, so that every ordering of the stretch is equally likely. Nothing changes outside the stretch.',
-      'It is the most disruptive of the four classic permutation mutations: inside the stretch, positions, relative order and adjacencies are all lost at once. In terms of Talbi’s (2009) properties it is still valid and ergodic, but it is not very local unless the stretch is short. The size of the stretch therefore controls how much the mutant changes.',
+      'Inside the stretch, positions, relative order and adjacencies are all lost at once. In terms of Talbi’s (2009) properties it is still valid and ergodic, but it is not very local unless the stretch is short. The size of the stretch therefore controls how much the mutant changes. Cicirello (2023) considers it generally too disruptive, except when it matters which gene comes before which: that order can only change between two genes of the stretch, and on average it changes half the time.',
       'For every ordering to be equally likely, the shuffle uses the Fisher-Yates algorithm: the stretch is traversed from back to front and each gene is swapped with one chosen at random among itself and those before it. A stretch of m genes has m! orderings, one of which is the original, so sometimes, especially with short stretches, the stretch stays the same.',
       'Cost: one draw per gene of the stretch, in at most O(n) time.',
     ],
@@ -159,8 +159,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. En el apartado 3.3.2.2 presenta las mutaciones de las permutaciones y las propiedades que deben cumplir; la mezcla es la que menos respeta la localidad.',
-      en: 'The course’s reference textbook. Section 3.3.2.2 presents permutation mutations and the properties they should meet; scramble is the one that least respects locality.',
+      es: 'Manual de referencia del curso. En el apartado 3.3.2.1 presenta las mutaciones de las permutaciones y las propiedades que deben cumplir; la mezcla es la que menos respeta la localidad.',
+      en: 'The course’s reference textbook. Section 3.3.2.1 presents permutation mutations and the properties they should meet; scramble is the one that least respects locality.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación de permutaciones en el capítulo 8, dedicado a los algoritmos genéticos.',
@@ -173,6 +173,10 @@ if (typeof module !== 'undefined' && module.exports) {
     C.ref('syswerda1991', {
       es: 'Compara mutaciones para problemas de secuenciación de tareas, entre ellas la reordenación aleatoria de una sublista.',
       en: 'Compares mutations for task-scheduling problems, including the random reordering of a sublist.',
+    }),
+    C.ref('cicirello', {
+      es: 'Revisión de las mutaciones de permutación con el rasgo que conserva cada una. Considera la mezcla, en general, demasiado disruptiva, pero eficaz cuando importan las precedencias: conserva todas las que afectan a genes de fuera del tramo y, en promedio, la mitad de las de dentro.',
+      en: 'Review of permutation mutations with the feature each one preserves. Considers scramble generally too disruptive, but effective when precedences matter: it keeps all those involving genes outside the stretch and, on average, half of those inside.',
     }),
   ];
 

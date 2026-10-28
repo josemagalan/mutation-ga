@@ -155,8 +155,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.2, con las propiedades de validez, ergodicidad y localidad, que la mutación uniforme cumple solo en parte (no es local).',
-      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.2, with the validity, ergodicity and locality properties, which uniform mutation only partly meets (it is not local).',
+      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.1, con las propiedades de validez, ergodicidad y localidad, que la mutación uniforme cumple solo en parte (no es local).',
+      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.1, with the validity, ergodicity and locality properties, which uniform mutation only partly meets (it is not local).',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

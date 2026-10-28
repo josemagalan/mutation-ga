@@ -163,8 +163,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
   const references = [
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Para las representaciones discretas, la mutación sustituye el valor de un gen por otro del alfabeto (apartado 3.3.2.2), y debe ser válida, ergódica y local.',
-      en: 'The course’s reference textbook. For discrete representations, mutation replaces a gene’s value by another from the alphabet (section 3.3.2.2), and it should be valid, ergodic and local.',
+      es: 'Manual de referencia del curso. Para las representaciones discretas, la mutación sustituye el valor de un gen por otro del alfabeto (apartado 3.3.2.1), y debe ser válida, ergódica y local.',
+      en: 'The course’s reference textbook. For discrete representations, mutation replaces a gene’s value by another from the alphabet (section 3.3.2.1), and it should be valid, ergodic and local.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la representación de las soluciones y su mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

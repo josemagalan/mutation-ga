@@ -189,8 +189,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Proposes non-uniform mutation, whose jump narrows over the generations, for real-coded genetic algorithms, and compares it with uniform mutation.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.2; la no uniforme pasa de poco local a muy local a lo largo de la búsqueda.',
-      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.2; non-uniform mutation moves from barely local to very local over the search.',
+      es: 'Manual de referencia del curso. Trata la mutación de las representaciones reales en el apartado 3.3.2.1; la no uniforme pasa de poco local a muy local a lo largo de la búsqueda.',
+      en: 'The course’s reference textbook. Covers mutation for real-valued representations in section 3.3.2.1; non-uniform mutation moves from barely local to very local over the search.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación en el capítulo 8, dedicado a los algoritmos genéticos.',

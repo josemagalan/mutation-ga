@@ -149,8 +149,8 @@ if (typeof module !== 'undefined' && module.exports) {
       en: 'Proposes, for task-scheduling problems, position-based mutation, which takes a gene out and inserts it elsewhere, and compares it with swap.',
     }, { original: true }),
     C.ref('talbi', {
-      es: 'Manual de referencia del curso. Presenta la inserción (desplazamiento) como vecindario de las permutaciones (capítulo 2) y como mutación (apartado 3.3.2.2), y la relaciona con los problemas de secuenciación, donde importa el orden relativo.',
-      en: 'The course’s reference textbook. Presents insertion (shift) as a permutation neighbourhood (chapter 2) and as a mutation (section 3.3.2.2), and relates it to sequencing problems, where relative order matters.',
+      es: 'Manual de referencia del curso. Presenta la inserción (desplazamiento) como vecindario de las permutaciones (capítulo 2) y como mutación (apartado 3.3.2.1), y la relaciona con los problemas de secuenciación, donde importa el orden relativo.',
+      en: 'The course’s reference textbook. Presents insertion (shift) as a permutation neighbourhood (chapter 2) and as a mutation (section 3.3.2.1), and relates it to sequencing problems, where relative order matters.',
     }),
     C.ref('bautista', {
       es: 'Manual en español de metaheurísticas aplicadas a problemas de ingeniería de organización industrial, referencia del curso. Trata la mutación de permutaciones en el capítulo 8, dedicado a los algoritmos genéticos.',
@@ -159,6 +159,10 @@ if (typeof module !== 'undefined' && module.exports) {
     C.ref('eiben', {
       es: 'Manual de computación evolutiva. Su apartado 4.5.1 describe la mutación por inserción eligiendo dos genes y colocando el segundo detrás del primero.',
       en: 'Evolutionary computing textbook. Section 4.5.1 describes insert mutation by choosing two genes and placing the second right after the first.',
+    }),
+    C.ref('cicirello', {
+      es: 'Revisión de las mutaciones de permutación con el rasgo que conserva cada una. La inserción cambia como mucho tres aristas y resulta especialmente eficaz cuando importan las precedencias, pero mueve muchas posiciones (en promedio, unos n/3 genes).',
+      en: 'Review of permutation mutations with the feature each one preserves. Insertion changes at most three edges and is especially effective when precedences matter, but it moves many positions (about n/3 genes on average).',
     }),
   ];
 

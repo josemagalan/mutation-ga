@@ -8,6 +8,7 @@
   const dict = {
     es: {
       portalHome: 'Laboratorio de algoritmos genéticos',
+      bookChapter: 'Libro · capítulo 7',
       brand: 'Mutación en algoritmos genéticos',
       homeTitleDoc: 'Operadores de mutación · Algoritmos genéticos',
       opTitleDoc: '{name} · Algoritmos genéticos',
@@ -185,6 +186,7 @@
     },
     en: {
       portalHome: 'Genetic Algorithms Lab',
+      bookChapter: 'Book · chapter 7 (Spanish)',
       brand: 'Mutation in genetic algorithms',
       homeTitleDoc: 'Mutation operators · Genetic algorithms',
       opTitleDoc: '{name} · Genetic algorithms',

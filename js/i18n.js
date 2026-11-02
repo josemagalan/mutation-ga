@@ -186,7 +186,7 @@
     },
     en: {
       portalHome: 'Genetic Algorithms Lab',
-      bookChapter: 'Book · chapter 7 (Spanish)',
+      bookChapter: 'Book · chapter 7',
       brand: 'Mutation in genetic algorithms',
       homeTitleDoc: 'Mutation operators · Genetic algorithms',
       opTitleDoc: '{name} · Genetic algorithms',
